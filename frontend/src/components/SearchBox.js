@@ -27,17 +27,19 @@ function SearchBox() {
   };
 
   return (
-    <Form onSubmit={submitHandler} className="d-flex">
+    <Form  onSubmit={submitHandler} className="d-flex" >
       <Form.Control
+        style={{borderRadius:'10px'}}
         type="text"
         name="q"
         onChange={(e) => setKeyword(e.target.value)}
         className="mr-sm-2 ml-sm-5"
       ></Form.Control>
 
-      <Button style={{borderRadius:'10px'}} type="submit" variant="outline-dark" className="p-2 mx-sm-2">
+      <Button style={{borderRadius:'10px'}} type="submit" variant="dark" className="p-2 mx-sm-2">
         Search
       </Button>
+
     </Form>
   );
 }

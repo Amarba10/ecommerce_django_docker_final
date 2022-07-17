@@ -76,7 +76,7 @@ function LoginScreen({ location, history }) {
           />
         </Form.Group>
 
-        <Button type="submit" variant="primary" className="mt-3">
+        <Button  style={{borderRadius:'10px'}}  type="submit" variant="primary" className="mt-3">
           Sign In
         </Button>
       </Form>

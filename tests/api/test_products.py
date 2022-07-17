@@ -1,10 +1,11 @@
-import pytest
 
-# @pytest.mark.django_db
 # def test_product_created():
 #   Product.objects.create
 from rest_framework.reverse import reverse
+import pytest
 from rest_framework.test import APIClient
+client = APIClient()
+
 
 from base.models import Product
 
@@ -20,20 +21,17 @@ def create_product():
 
 @pytest.mark.django_db
 def test_product_creation():
-  p = create_product()
-  assert isinstance(p, Product) is True
-  assert p.name == " Product Name "
-
-
-
+    p = create_product()
+    assert isinstance(p, Product) is True
+    assert p.name == " Product Name "
 
 
 # Api test  - Integration testing
-def test_api_product_creation():
-    client = APIClient()
-
-    response = client.post("/api/products/create/")
-
-    # data = response.data
-
-    assert response.status_code == 200
+# def test_api_product_creation():
+#     client = APIClient()
+#
+#     response = client.post("/api/products/create/")
+#
+#     # data = response.data
+#
+#     assert response.status_code == 200

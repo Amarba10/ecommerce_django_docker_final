@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 
 /* REACT-BOOTSTRAP */
 import { Row, Col } from "react-bootstrap";
-
 /* COMPONENTS */
 import Product from "../components/Product";
 import Loader from "../components/Loader";
@@ -36,8 +35,9 @@ function HomeScreen({ history }) {
   return (
     <div>
       {!keyword && <ProductCarousel />}
-
-      <h1 style={{fontFamily:'AkayaKanadaka', textAlign:'center',color:'red'}} >Latest Products</h1>
+      <h3 style={{fontFamily:'Chalkboard', textAlign:'center',color:'red'}} >Music once admitted to the soul, becomes a sort of spirit, and never dies.!</h3>
+      <br />
+      <h4 style={{fontFamily:'Chalkboard',color:'black'}} >Latest Products</h4>
 
       {loading ? (
         <Loader />

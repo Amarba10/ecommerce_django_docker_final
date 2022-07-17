@@ -5,41 +5,70 @@ from rest_framework.test import APIClient
 
 from base.models import Product
 
-'''
-Unit tests -> checking user creation func
-'''
-@pytest.mark.django_db
-def test_user_create():
-    User.objects.create_user('test','test@test.com','test')
-    count = User.objects.all().count()
-    assert count == 1
-
-@pytest.fixture()
-def user_1(db):
-    return User.objects.create_user("test-user")
-
-@pytest.mark.django_db
-def test_set_check_password(user_1):
-    user_1.set_password("new-password")
-    assert user_1.check_password("new-password") is True
-
-
-
+client = APIClient()
 '''
 Integration testing testing api to register user
 '''
 @pytest.mark.django_db
-def test_register_user():
-    client = APIClient()
-
+def test_registration():
     payload = dict(
-        name="testing123",
+        name="amar",
         email="test11@test.com",
-        password="super-secret"
+        password="test123456&"
     )
-
     response = client.post("/api/users/register/", payload)
-
     data = response.data
-
     assert data["name"] == payload["name"]
+    assert data["username"] == payload["email"]
+    assert "password" not in data
+
+@pytest.mark.django_db
+def test_login():
+    payload = dict(
+        name="amar",
+        email="test11@test.com",
+        password="test123456&"
+    )
+    client.post("/api/users/register/", payload)
+    response = client.post("/api/users/login/", dict(username="test11@test.com",password="test123456&"))
+    data = response.data
+    assert data["username"] == payload["email"]
+    assert "password" not in data
+    assert response.status_code == 200  # status 200 for login success
+
+
+@pytest.mark.django_db
+# wrong username and pass
+def test_Invalid_Username():
+    response = client.post("/api/users/login/", dict(username="amarbb_kk@gmail",password="asasasasa"))
+    assert response.status_code == 401 # 401 for failed login
+
+@pytest.mark.django_db
+# mandatory fields
+def test_mandatory_fields():
+    response = client.post("/api/users/login/", dict(username="amarbb_kk@gmail"))
+    assert response.status_code == 400 # 400 client error
+
+# def test_profille():
+#     payload = dict(
+#         name="amar",
+#         email="test11@test.com",
+#         password="test123456&"
+#     )
+#     client.post("/api/users/register/", payload)
+#     client.post("/api/users/login/", dict(username="test11@test.com", password="test123456&"))
+#     response = client.get('/api/users/profile')
+#     assert response.status_code == 200
+
+# @pytest.mark.django_db
+# def test_logout():
+#     payload = dict(
+#         name="amar",
+#         email="test11@test.com",
+#         password="test123456&"
+#     )
+#     client.post("/api/users/register/", payload)
+#     client.post("/api/users/login/", dict(username="test11@test.com", password="test123456&"))
+#
+
+
