@@ -32,7 +32,7 @@ function Header() {
 
   return (
     <header>
-      <Navbar bg="danger" variant="secondary" expand="lg" collapseOnSelect style={{borderBottom:'3px solid black'}}>
+      <Navbar bg="info" variant="secondary" expand="lg" collapseOnSelect style={{borderBottom:'3px solid black'}}>
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
@@ -47,7 +47,6 @@ function Header() {
 
             <Nav
               className="ms-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
               navbarScroll
             >
               <LinkContainer to="/cart">

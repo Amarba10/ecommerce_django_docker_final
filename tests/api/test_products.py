@@ -1,37 +1,23 @@
-
-# def test_product_created():
-#   Product.objects.create
-from rest_framework.reverse import reverse
+from rest_framework.response import Response
 import pytest
+from django.contrib.auth.models import User
+from django.utils import timezone
 from rest_framework.test import APIClient
-client = APIClient()
-
+from base.models import Review
 
 from base.models import Product
 
-
-def create_product():
-  return Product.objects.create(
-        name=" Product Name ",
-        price=0,
-        brand="Sample brand ",
-        countInStock=0,
-        category="Sample category",
-        description=" ")
+client = APIClient()
 
 @pytest.mark.django_db
-def test_product_creation():
-    p = create_product()
-    assert isinstance(p, Product) is True
-    assert p.name == " Product Name "
-
-
-# Api test  - Integration testing
-# def test_api_product_creation():
-#     client = APIClient()
-#
-#     response = client.post("/api/products/create/")
-#
-#     # data = response.data
-#
-#     assert response.status_code == 200
+def test_api_product_creation():
+    client = APIClient()
+    user = User.objects.create_user(username='test1',password='123567',is_staff=True)
+    client.force_authenticate(user)
+    response = client.post("/api/products/create/")
+    data = response.data
+    assert data["name"] == " Product Name "
+    assert data["brand"] == "Sample brand "
+    assert data["countInStock"] == 0
+    assert data["category"] == "Sample category"
+    assert data["description"] == " "

@@ -34,7 +34,7 @@ def test_login():
     data = response.data
     assert data["username"] == payload["email"]
     assert "password" not in data
-    assert response.status_code == 200  # status 200 for login success
+    assert response.status_code == 200
 
 
 @pytest.mark.django_db

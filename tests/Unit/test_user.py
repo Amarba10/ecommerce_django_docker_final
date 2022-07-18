@@ -21,6 +21,13 @@ def user_1(db):
 
 @pytest.mark.django_db
 def test_set_check_password(user_1):
-    user_1.set_password("new-password")
-    assert user_1.check_password("new-password") is True
+    user_1.set_password("test2345")
+    assert user_1.check_password("test2345") is True
+
+@pytest.mark.django_db
+def test_update_username(user_1):
+    user=User.objects.create_user('test2','amarbava@gmail.com','amaro')
+    user_update=User.objects.get(id=user_1.id)
+    user_update.username='barake'
+    assert 'barake' == user_update.username
 
