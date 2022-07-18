@@ -54,21 +54,21 @@ def test_login(driver):
     driver.find_element(By.CSS_SELECTOR, "#email").send_keys("amar.absdassds7t19219asb@gmail.com")
     driver.find_element(By.CSS_SELECTOR, "#password").send_keys("Amar1234&*")
     driver.find_element(By.CSS_SELECTOR, "#root > div > main > div > div > div > form > button").click()
-    # time.sleep(2)
-    # driver.find_element(By.CSS_SELECTOR, "#username").click()
-    # driver.find_element(By.LINK_TEXT, "Profile").click()
-    # result = driver.find_element(By.CSS_SELECTOR, "#name").text
-    # # assert result == 'amaroo'
+    time.sleep(2)
+    driver.find_element(By.CSS_SELECTOR, "#username").click()
+    driver.find_element(By.LINK_TEXT, "Profile").click()
+    result = driver.find_element(By.CSS_SELECTOR, "#name").text
+    assert result == 'amaroo'
 #
-# def test_search_product(driver):
-#     driver.get('http://localhost:8000/')
-#     driver.maximize_window()
-#     time.sleep(5)
-#     product = driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div:nth-child(4) > div > div:nth-child(1) > div > div > a").text
-#     driver.find_element(By.CSS_SELECTOR,"#navbarScroll > form > input").send_keys(product)
-#     driver.find_element(By.CSS_SELECTOR,"#navbarScroll > form > button").click()
-#     time.sleep(2)
-#     Expected = driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div > div > div > div > a").text
-#     assert Expected == product
+def test_search_product(driver):
+    driver.get('http://localhost:8000/')
+    driver.maximize_window()
+    time.sleep(5)
+    product = driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div:nth-child(4) > div > div:nth-child(1) > div > div > a").text
+    driver.find_element(By.CSS_SELECTOR,"#navbarScroll > form > input").send_keys(product)
+    driver.find_element(By.CSS_SELECTOR,"#navbarScroll > form > button").click()
+    time.sleep(2)
+    Expected = driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div > div > div > div > a").text
+    assert Expected == product
 
 
