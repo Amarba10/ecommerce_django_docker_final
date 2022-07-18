@@ -34,10 +34,10 @@ function HomeScreen({ history }) {
 
   return (
     <div>
+
       {!keyword && <ProductCarousel />}
       <h3 style={{fontFamily:'Chalkboard', textAlign:'center',color:'red'}} >Music once admitted to the soul, becomes a sort of spirit, and never dies.!</h3>
       <br />
-      <h4 style={{fontFamily:'Chalkboard',color:'black'}} >Latest Products</h4>
 
       {loading ? (
         <Loader />

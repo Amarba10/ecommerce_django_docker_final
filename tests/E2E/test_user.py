@@ -19,7 +19,6 @@ import pytest
 
 @pytest.fixture()
 def driver():
-
     # chrome_driver_binary = r"./chromedriver"
     # ser_chrome = ChromeService(chrome_driver_binary)
     driver = webdriver.Chrome(ChromeDriverManager().install())
@@ -32,24 +31,43 @@ def driver():
 def test_Registration(driver):
     driver.get('http://localhost:8000/')
     driver.maximize_window()
-    driver.find_element(By.CSS_SELECTOR,"#navbarScroll > div > a:nth-child(2)").click()
-    driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div > div > div > a").click()
-    name1 = driver.find_element(By.CSS_SELECTOR,"#name").send_keys("amaroo")
+    driver.find_element(By.CSS_SELECTOR, "#navbarScroll > div > a:nth-child(2)").click()
+    driver.find_element(By.CSS_SELECTOR, "#root > div > main > div > div > div > div > div > a").click()
+    driver.find_element(By.CSS_SELECTOR, "#name").send_keys("amaroo")
     Actual = driver.find_element(By.CSS_SELECTOR, "#name").text
-    driver.find_element(By.CSS_SELECTOR,"#email").send_keys("amar.absdassds7t187sb@gmail.com")
-    driver.find_element(By.CSS_SELECTOR,"#password").send_keys("Amar1234&*")
+    driver.find_element(By.CSS_SELECTOR, "#email").send_keys("amar.absdammsfsfs435@gmail.com")
+    driver.find_element(By.CSS_SELECTOR, "#password").send_keys("Amar1234&*")
     driver.find_element(By.CSS_SELECTOR, "#passwordConfirm").send_keys("Amar1234&*")
-    driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div > form > button").click()
+    driver.find_element(By.CSS_SELECTOR, "#root > div > main > div > div > div > form > button").click()
     time.sleep(3)
-    driver.find_element(By.CSS_SELECTOR,"#username").click()
+    driver.find_element(By.CSS_SELECTOR, "#username").click()
     driver.find_element(By.LINK_TEXT, "Profile").click()
-    name = driver.find_element(By.CSS_SELECTOR,"#name")
-    Expected =name.text
+    name = driver.find_element(By.CSS_SELECTOR, "#name")
+    Expected = name.text
     assert Expected == Actual
+
 
 def test_login(driver):
     driver.get('http://localhost:8000/')
-    driver.find_element(By.CSS_SELECTOR,"#navbarScroll > div > a:nth-child(2)").click()
-    driver.find_element(By.CSS_SELECTOR,"#email").send_keys("amar.absdassds7t19219asb@gmail.com")
-    driver.find_element(By.CSS_SELECTOR,"#password").send_keys("Amar1234&*")
-    driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div > form > button").click()
+    driver.maximize_window()
+    driver.find_element(By.CSS_SELECTOR, "#navbarScroll > div > a:nth-child(2)").click()
+    driver.find_element(By.CSS_SELECTOR, "#email").send_keys("amar.absdassds7t19219asb@gmail.com")
+    driver.find_element(By.CSS_SELECTOR, "#password").send_keys("Amar1234&*")
+    driver.find_element(By.CSS_SELECTOR, "#root > div > main > div > div > div > form > button").click()
+    time.sleep(2)
+    driver.find_element(By.CSS_SELECTOR, "#username").click()
+    driver.find_element(By.LINK_TEXT, "Profile").click()
+    result = driver.find_element(By.CSS_SELECTOR, "#name").text
+    # assert result == 'amaroo'
+
+def test_search_product(driver):
+    driver.get('http://localhost:8000/')
+    driver.maximize_window()
+    product = driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div:nth-child(5) > div > div:nth-child(1) > div > div > a").text
+    driver.find_element(By.CSS_SELECTOR,"#navbarScroll > form > input").send_keys(product)
+    driver.find_element(By.CSS_SELECTOR,"#navbarScroll > form > button").click()
+    time.sleep(2)
+    Expected = driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div > div > div > div > a").text
+    assert Expected == product
+
+

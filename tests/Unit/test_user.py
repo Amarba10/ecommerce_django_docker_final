@@ -11,7 +11,7 @@ Unit tests -> checking user creation func
 '''
 @pytest.mark.django_db
 def test_user_create():
-    User.objects.create_user('tatocc','barake@gmail.com','abo barake')
+    User.objects.create_user('amar','barake@gmail.com','barake123456')
     count = User.objects.all().count()
     assert count == 1
 
