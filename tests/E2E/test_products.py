@@ -48,27 +48,27 @@ def test_add_product_to_cart(driver):
     name = driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div.col-md-8 > h1").text
     assert name == "SHOPPING CART"
 
-def test_buy_product(driver):
-    driver.get('http://localhost:8000/')
-    driver.maximize_window()
-    driver.find_element(By.CSS_SELECTOR, "#navbarScroll > div > a:nth-child(2)").click()
-    driver.find_element(By.CSS_SELECTOR, "#email").send_keys("amar.abs35@gmail.com")
-    driver.find_element(By.CSS_SELECTOR, "#password").send_keys("Amar1234&*")
-    driver.find_element(By.CSS_SELECTOR, "#root > div > main > div > div > div > form > button").click()
-    time.sleep(2)
-    driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div:nth-child(4) > div > div:nth-child(2) > div > div > a").click()
-    time.sleep(2)
-    driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div:nth-child(1) > div.col > div > div > div:nth-child(4) > button").click()
-    driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div.col-md-4 > div > div.list-group-item > button").click()
-    driver.find_element(By.CSS_SELECTOR,"#address").send_keys("Shefa-amr,Elien")
-    driver.find_element(By.CSS_SELECTOR,"#city").send_keys("Shefa-amr")
-    driver.find_element(By.CSS_SELECTOR,"#postalCode").send_keys("202000")
-    driver.find_element(By.CSS_SELECTOR,"#country").send_keys("Israel")
-    driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div > form > button").click()
-    driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div > form > button").click()
-    driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div.row > div.col-md-4 > div > div > div:nth-child(7) > button").click()
-    time.sleep(2)
-    # driver.find_element(By.CSS_SELECTOR,"#buttons-container > div > div.paypal-button-row.paypal-button-number-0.paypal-button-layout-vertical.paypal-button-shape-rect.paypal-button-number-multiple.paypal-button-env-sandbox.paypal-button-color-gold.paypal-button-text-color-black.paypal-logo-color-blue > div > div.paypal-button-spinner").click()
+# def test_buy_product(driver):
+#     driver.get('http://localhost:8000/')
+#     driver.maximize_window()
+#     driver.find_element(By.CSS_SELECTOR, "#navbarScroll > div > a:nth-child(2)").click()
+#     driver.find_element(By.CSS_SELECTOR, "#email").send_keys("amar.abs35@gmail.com")
+#     driver.find_element(By.CSS_SELECTOR, "#password").send_keys("Amar1234&*")
+#     driver.find_element(By.CSS_SELECTOR, "#root > div > main > div > div > div > form > button").click()
+#     time.sleep(2)
+#     driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div:nth-child(4) > div > div:nth-child(2) > div > div > a").click()
+#     time.sleep(2)
+#     driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div:nth-child(1) > div.col > div > div > div:nth-child(4) > button").click()
+#     driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div.col-md-4 > div > div.list-group-item > button").click()
+#     driver.find_element(By.CSS_SELECTOR,"#address").send_keys("Shefa-amr,Elien")
+#     driver.find_element(By.CSS_SELECTOR,"#city").send_keys("Shefa-amr")
+#     driver.find_element(By.CSS_SELECTOR,"#postalCode").send_keys("202000")
+#     driver.find_element(By.CSS_SELECTOR,"#country").send_keys("Israel")
+#     driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div > form > button").click()
+#     driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div > div > form > button").click()
+#     driver.find_element(By.CSS_SELECTOR,"#root > div > main > div > div.row > div.col-md-4 > div > div > div:nth-child(7) > button").click()
+#     time.sleep(2)
+#     # driver.find_element(By.CSS_SELECTOR,"#buttons-container > div > div.paypal-button-row.paypal-button-number-0.paypal-button-layout-vertical.paypal-button-shape-rect.paypal-button-number-multiple.paypal-button-env-sandbox.paypal-button-color-gold.paypal-button-text-color-black.paypal-logo-color-blue > div > div.paypal-button-spinner").click()
 
 
 

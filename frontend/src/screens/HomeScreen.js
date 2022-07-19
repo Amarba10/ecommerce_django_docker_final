@@ -36,6 +36,7 @@ function HomeScreen({ history }) {
     <div>
 
       {!keyword && <ProductCarousel />}
+
       <h3 style={{fontFamily:'Chalkboard', textAlign:'center',color:'##E65874'}} >"Music once admitted to the soul, becomes a sort of spirit, and never dies"</h3>
 
       <br />
