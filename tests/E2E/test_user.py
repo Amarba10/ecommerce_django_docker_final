@@ -37,7 +37,7 @@ def test_Registration(driver):
     driver.find_element(By.CSS_SELECTOR, "#root > div > main > div > div > div > div > div > a").click()
     driver.find_element(By.CSS_SELECTOR, "#name").send_keys("amaroo")
     Actual = driver.find_element(By.CSS_SELECTOR, "#name").text
-    driver.find_element(By.CSS_SELECTOR, "#email").send_keys("amar.barake.10@gmail.com")
+    driver.find_element(By.CSS_SELECTOR, "#email").send_keys("amar.barake.1910@gmail.com")
     driver.find_element(By.CSS_SELECTOR, "#password").send_keys("Amar1234&*")
     driver.find_element(By.CSS_SELECTOR, "#passwordConfirm").send_keys("Amar1234&*")
     driver.find_element(By.CSS_SELECTOR, "#root > div > main > div > div > div > form > button").click()
