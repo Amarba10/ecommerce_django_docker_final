@@ -14,7 +14,7 @@
 
 ```
 
-### 📷 Project Screenshots
+### Project Screenshots
 
 ![ss](./ss/.png)
 ![ss](./ss/.png)
