@@ -1,30 +1,29 @@
 <h1 align=center>E-Commerce Website with Django + React & Redux</h1>
-<h2 align=center>Otaku House - Anime Merchandise and Cosplay Shop</h2>
+<h2 align=center>Instruments Sound-Musical Instruments.</h2>
 
-## ✨ [Live Link - Otaku House](https://otakuhouse.herokuapp.com/)
-
-### How to Run 🏃‍♀️
+### How to Run : 
+## ** The commands working only with MacOs.
 
 ```shell
 1 Clone This Repo
 2 cd backend
-3 python -m venv env
-4 .\env\Scripts\activate
+3 python -m venv venv
+4 source venv/bin/activate 
 5 pip install -r requirements.txt 
 6 python manage.py runserver
 
 ```
 
-### 📷 Project Screenshots
+### Project Screenshots
 
-![ss](./ss/ss1.png)
-![ss](./ss/ss2.png)
-![ss](./ss/ss3.png)
-![ss](./ss/ss4.png)
-![ss](./ss/ss5.png)
-![ss](./ss/ss6.png)
+![ss](./ss/.png)
+![ss](./ss/.png)
+![ss](./ss/.png)
+![ss](./ss/.png)
+![ss](./ss/.png)
+![ss](./ss/.png)
 
-### 🚀 Project Features
+### Project Features
 
 A completely customized eCommerce / shopping cart application using Django, REACT and REDUX with the following functionality:
 
