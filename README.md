@@ -2,7 +2,7 @@
 <h2 align=center>Instruments Sound-Musical Instruments.</h2>
 
 ### How to Run : 
-## ** The commands working only with MacOs.
+## * The commands working only with MacOs.
 
 ```shell
 1 Clone This Repo
@@ -16,12 +16,9 @@
 
 ### Project Screenshots
 
-![screenshots](./screenshots/Screen Shot 2022-07-22 at 23.28.33.png)
 ![screenshots](./screenshots/1.jpeg)
-![ss](./ss/.png)
-![ss](./ss/.png)
-![ss](./ss/.png)
-![ss](./ss/.png)
+![screenshots](./screenshots/2.jpeg)
+![screenshots](./screenshots/3.jpeg)
 
 ### Project Features
 
