@@ -17,7 +17,7 @@
 ### Project Screenshots
 
 ![screenshots](./screenshots/Screen Shot 2022-07-22 at 23.28.33.png)
-![ss](./ss/.png)
+![screenshots](./screenshots/1.jpeg)
 ![ss](./ss/.png)
 ![ss](./ss/.png)
 ![ss](./ss/.png)
